@@ -1,0 +1,9 @@
+about-us: 'Về Chúng Tôi'
+buttons:
+    back: 'Quay Lại'
+    count: 'Count = {0}'
+errors:
+    not-found:
+        code: '404'
+        title: 'Không Tìm Thấy Trang'
+        description: 'Xin lỗi, trang bạn đang tìm kiếm không tồn tại.'

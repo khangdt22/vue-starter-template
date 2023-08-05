@@ -1,0 +1,9 @@
+about-us: 'About Us'
+buttons:
+    back: 'Go Back'
+    count: 'Count is {0}'
+errors:
+    not-found:
+        code: '404'
+        title: 'Page not found'
+        description: 'Sorry, we couldn’t find the page you’re looking for.'

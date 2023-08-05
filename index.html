@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
+
+        <title>Vue App</title>
+
+        <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+
+        <script>
+            const theme = localStorage.getItem('vueuse-color-scheme') || 'auto'
+            const prefersDark = window?.matchMedia?.('(prefers-color-scheme: dark)').matches
+
+            if (theme === 'dark' || (prefersDark && theme !== 'light')) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
+    </head>
+
+    <body class="antialiased font-sans bg-slate-100 text-slate-500 dark:bg-slate-900 dark:text-slate-400">
+        <noscript>
+            <div style="text-align: center; color: red; font-weight: bold; font-size: larger; margin: 1rem">
+                This website requires JavaScript to run. Please enable JavaScript to continue.
+            </div>
+        </noscript>
+
+        <div id="app"></div>
+
+        <script src="/src/main.ts" type="module"></script>
+    </body>
+</html>

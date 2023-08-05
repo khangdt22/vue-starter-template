@@ -1,0 +1,30 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a,
+area,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+    @apply touch-manipulation;
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+body {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#app {
+    @apply w-full h-full overflow-x-hidden overflow-y-auto;
+}

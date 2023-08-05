@@ -1,0 +1,96 @@
+{
+    "license": "UNLICENSED",
+    "private": true,
+    "type": "module",
+    "author": "Diep Dang <khangdt310722@gmail.com>",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
+        "preview": "vite preview",
+        "preview:https": "cross-env PORT=4173 serve dist",
+        "up": "ncu -i",
+        "lint": "pnpm prettier '**/*.!(js|ts|*.ts|jsx|tsx|vue)' && pnpm eslint .",
+        "eslint": "eslint --ignore-path .gitignore --fix",
+        "prettier": "prettier --ignore-path .gitignore --ignore-unknown --write",
+        "preinstall": "npx only-allow pnpm",
+        "prepare": "simple-git-hooks"
+    },
+    "dependencies": {
+        "@khangdt22/utils": "^0.0.5",
+        "@unocss/reset": "^0.54.1",
+        "@vueuse/core": "^10.3.0",
+        "@vueuse/head": "^1.1.26",
+        "@vueuse/math": "^10.3.0",
+        "title-case": "^3.0.3",
+        "vue": "^3.3.4",
+        "vue-i18n": "^9.2.2",
+        "vue-router": "^4.2.4"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.6.7",
+        "@commitlint/config-conventional": "latest",
+        "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+        "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+        "@iconify/json": "^2.2.98",
+        "@intlify/unplugin-vue-i18n": "^0.12.2",
+        "@julr/unocss-preset-forms": "^0.0.5",
+        "@khangdt22/eslint-config": "latest",
+        "@khangdt22/prettier-config": "latest",
+        "@types/node": "^20.4.7",
+        "@unocss/eslint-config": "^0.54.1",
+        "@unocss/postcss": "^0.54.1",
+        "@unocss/preset-wind": "^0.54.1",
+        "@vitejs/plugin-vue": "^4.2.3",
+        "@vue-macros/volar": "^0.13.2",
+        "@vue/compiler-sfc": "^3.3.4",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.46.0",
+        "https-localhost": "^4.7.1",
+        "lint-staged": "^13.2.3",
+        "npm-check-updates": "^16.10.17",
+        "only-allow": "^1.1.1",
+        "prettier": "^3.0.1",
+        "rollup-plugin-polyfill-node": "^0.12.0",
+        "simple-git-hooks": "^2.9.0",
+        "tailwindcss": "^3.3.3",
+        "typescript": "^5.1.6",
+        "unocss": "^0.54.1",
+        "unocss-transformer-alias": "^0.0.6",
+        "unplugin-auto-import": "^0.16.6",
+        "unplugin-icons": "^0.16.5",
+        "unplugin-vue-components": "^0.25.1",
+        "unplugin-vue-macros": "^2.4.3",
+        "unplugin-vue-router": "^0.6.4",
+        "vite": "^4.4.8",
+        "vite-plugin-vue-layouts": "^0.8.0",
+        "vite-plugin-webfont-dl": "^3.7.6",
+        "vue-tsc": "^1.8.8"
+    },
+    "packageManager": "pnpm@8.6.11",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "commitlint": {
+        "extends": "@commitlint/config-conventional"
+    },
+    "eslintConfig": {
+        "extends": [
+            "@khangdt22/eslint-config/configs/vue",
+            "@unocss"
+        ],
+        "ignorePatterns": [
+            "types/auto-imports.d.ts",
+            "types/components.d.ts",
+            "types/typed-router.d.ts"
+        ]
+    },
+    "lint-staged": {
+        "*.{js,ts,jsx,tsx,vue}": "pnpm eslint",
+        "*.!(js|ts|*.ts|jsx|tsx|vue)": "pnpm prettier"
+    },
+    "prettier": "@khangdt22/prettier-config",
+    "simple-git-hooks": {
+        "commit-msg": "npx --no -- commitlint --edit ${1}",
+        "pre-commit": "npx vue-tsc --noEmit && npx lint-staged"
+    }
+}
