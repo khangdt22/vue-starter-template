@@ -2,6 +2,8 @@ import { map, isKeyOf, type AnyObject } from '@khangdt22/utils/object'
 import type { MaybeRef } from 'vue'
 import { defaultDocument, defaultWindow } from '@vueuse/core'
 import type { I18n } from 'vue-i18n'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { titleCase } from 'title-case'
 
 export function normalizeLocale(locale: MaybeRef<string>) {

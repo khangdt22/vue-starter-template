@@ -53,7 +53,7 @@ export default defineConfig({
     },
     css: {
         postcss: {
-            plugins: [UnoPostCSS as any],
+            plugins: [<any>UnoPostCSS],
         },
     },
     build: {
@@ -70,7 +70,7 @@ export default defineConfig({
                 global: 'globalThis',
             },
             plugins: [
-                NodeGlobalsPolyfillPlugin({
+                <any>NodeGlobalsPolyfillPlugin({
                     buffer: true,
                     process: true,
                 }),
